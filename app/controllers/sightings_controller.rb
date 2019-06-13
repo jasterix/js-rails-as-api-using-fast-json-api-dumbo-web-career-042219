@@ -4,7 +4,7 @@ class SightingsController < ApplicationController
     options = {
       include: [:bird, :location]
     }
-    render json: SightingSerializer.new(sighting), options
+    render json: SightingSerializer.new(sighting, options)
     #OLD WAY PRE-Serializer
     # render json: @sighting.to_json(:include => {:bird => {:only =>[:name, :species]}, :location => {:only =>[:latitude, :longitude]}}, :except => [:updated_at])
   end
